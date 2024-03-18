@@ -1,0 +1,19 @@
+- Nessary Dependacies:
+
+1. sudo apt-get install python3-dev build-essential
+2. sudo apt-get install libosmesa6-dev
+3.sudo apt-get install patchelf
+
+
+- Mujoco-py not compatible with cython 3 hence downgrade cython version:
+
+pip install "cython<3"
+
+- Current gym doesn't have the robotics env, hence install gym-robotics and apply the changes to SpaceRobotEnv files: 
+
+pip install gym_robotics
+
+- Make changes to step functon in SpaceRobotEnv files (return extra False arrgument i.e the truncated variable):
+
+return obs, reward, done, False, info
+
